@@ -1,2 +1,31 @@
 #!/usr/bin/env ruby
-puts "hello world"
+
+
+puts "Please enter the path to the file you wish to check for errors"
+
+file_validator == false
+
+while (file_validator != true)
+  file = gets.chomp
+  if file.empty?
+    puts "You haven't selected any file"
+  else
+    puts "You selected file: #{file}"
+    file_validator == true   
+end
+
+
+
+def missing_brackets_argument(lines)
+  res_arr =[]
+  # puts em[-1].include?("(")
+  lines.each_with_index do |k, i|
+    if k.include?('def')
+      if !(k.length > 2 and k[-1].include?(")"))
+        res_arr << "Missing brackets '()' around argument on line #{i + 1}" 
+      end
+    end
+  end
+end
+
+end   
