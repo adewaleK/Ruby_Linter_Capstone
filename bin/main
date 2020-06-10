@@ -1,31 +1,38 @@
 #!/usr/bin/env ruby
 
-
-puts "Please enter the path to the file you wish to check for errors"
-
-file_validator == false
-
-while (file_validator != true)
+require_relative '../lib/filevalidator.rb'
+require_relative '../lib/errorhandler.rb'
+puts 'Welcome to Linter'
+file_validation = false
+while file_validation == false
+  print 'Please Enter the address of your file: '
   file = gets.chomp
   if file.empty?
-    puts "You haven't selected any file"
+    puts 'Empty address! Please Provide a valid address. '
   else
-    puts "You selected file: #{file}"
-    file_validator == true   
-end
-
-
-
-def missing_brackets_argument(lines)
-  res_arr =[]
-  # puts em[-1].include?("(")
-  lines.each_with_index do |k, i|
-    if k.include?('def')
-      if !(k.length > 2 and k[-1].include?(")"))
-        res_arr << "Missing brackets '()' around argument on line #{i + 1}" 
-      end
+    file_validate = FileValidation.new
+    validation = file_validate.file_exist(file)
+    if !validation == true
+      puts 'File not found Or Wrong format of file. PLease select .rb file'
+      puts "Your file address is : #{file}"
+    else
+      puts 'File Loaded'
+      file_validation = true
     end
   end
 end
 
-end   
+lines = []
+file = File.open(file, 'r')
+while (line = file.gets)
+  lines << line
+end
+validate = StyleError.new
+method_validate = validate.space_between_method_parenthesis(lines)
+method_validate.each { |x| puts x } unless method_validate.empty?
+comma_validate = validate.comma_with_space(lines)
+comma_validate.each { |x| puts x } unless comma_validate.empty?
+indentation_validate = validate.indentation(lines)
+indentation_validate.each { |x| puts x } unless indentation_validate.empty?
+puts 'Great Job! No Error Founds.' if method_validate.empty? && comma_validate.empty? && indentation_validate.empty?
+file.close
