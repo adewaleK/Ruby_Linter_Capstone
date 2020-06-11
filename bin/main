@@ -2,13 +2,12 @@
 
 require_relative '../lib/filevalidator.rb'
 require_relative '../lib/errorhandler.rb'
-puts 'Welcome to Linter'
 file_validation = false
 while file_validation == false
-  print 'Please Enter the address of your file: '
+  print 'Please Enter the path to the file you would like to check for errors: '
   file = gets.chomp
   if file.empty?
-    puts 'Empty address! Please Provide a valid address. '
+    puts 'Empty path! Please Provide the path of the file. '
   else
     file_validate = FileValidation.new
     validation = file_validate.file_exist(file)
@@ -28,11 +27,11 @@ while (line = file.gets)
   lines << line
 end
 validate = StyleError.new
-method_validate = validate.space_between_method_parenthesis(lines)
-method_validate.each { |x| puts x } unless method_validate.empty?
-comma_validate = validate.comma_with_space(lines)
-comma_validate.each { |x| puts x } unless comma_validate.empty?
+# trailing_validate = validate.trailing_space_validate(lines)
+# trailing_validate.each { |x| puts x } unless trailing_validate.empty?
+brackets_validate = validate.missing_brackets_round_arguments(lines)
+brackets_validate.each { |x| puts x } unless brackets_validate.empty?
 indentation_validate = validate.indentation(lines)
 indentation_validate.each { |x| puts x } unless indentation_validate.empty?
-puts 'Great Job! No Error Founds.' if method_validate.empty? && comma_validate.empty? && indentation_validate.empty?
+puts 'No Errors Found.' if brackets_validate.empty? && trailing_validate.empty?
 file.close
