@@ -7,7 +7,7 @@ class StyleError
     end
     res_arr
   end
-  
+
   def indentation(lines)
     puts '***** INDENTATION ERRORS *****'
     error_array = []
