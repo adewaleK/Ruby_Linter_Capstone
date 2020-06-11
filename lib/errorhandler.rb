@@ -9,19 +9,6 @@ class StyleError
     end
     res_arr
   end
-
-  # def space_between_method_parenthesis(array)
-  #   error_array = []
-  #   array.each_with_index do |x, index|
-  #     if x.match(/^\s*def\s{1}[\w]*\s{1,}\([\w]*\)/)
-  #       error_array.push("Space found before parenthesis. Line No. #{index + 1}")
-  #     elsif x[x.length - 2] == ' '
-  #       error_array.push("Trailing space at the end. Line No. #{index + 1}")
-  #     end
-  #   end
-  #   error_array
-  # end
-
   # def comma_with_space(line)
   #   error_array = []
   #   line.each_with_index do |x, index|
