@@ -12,7 +12,7 @@
 * [Built With](#Built-With)
 * [Getting started](#Getting-Started)
 * [Contributing](#contributing)
-* [Authors](#Authors)
+* [Author](#Author)
 
 
 <!-- ABOUT THE PROJECT -->
@@ -52,7 +52,7 @@ Open **_linter_** file using the text editor of your preference.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Clone or fork the repo <https://github.com/adewaleK/Tic_Tac_To.git> to get a copy and explore the content of the project.
+Clone or fork the repo <https://github.com/adewaleK/Ruby_Linter_Capstone.git> to get a copy and explore the content of the project.
 
 
 <!-- CONTRIBUTING -->
