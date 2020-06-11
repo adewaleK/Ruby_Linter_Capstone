@@ -9,21 +9,7 @@ class StyleError
     end
     res_arr
   end
-  # def comma_with_space(line)
-  #   error_array = []
-  #   line.each_with_index do |x, index|
-  #     (0...x.length).find_all { |y| x[y] == ',' }
-  #     if x.match(/\s+[,]/)
-  #       error_array.push("Space before Comma found. Line No. #{index + 1}")
-  #     elsif x.match(/[,][^\s?]/)
-  #       error_array.push("Space After Comma is missing. Line No. #{index + 1}")
-  #     elsif x.match(/,\s{2,}/)
-  #       error_array.push("one space is required after comma. Line No. #{index + 1}")
-  #     end
-  #   end
-  #   error_array
-  # end
-
+  
   def indentation(lines)
     puts "***** INDENTATION ERRORS *****"
     error_array = []
