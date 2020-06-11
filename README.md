@@ -21,6 +21,7 @@
 This requires me to create Ruby linters to further make life easy for me and other programmers. I have created 2 Ruby linters to check
 
 1. AMBIGUITY IN METHOD: This cop checks for ambiguous block association with method when param passed without parentheses.
+   ![screenshot](images/Full_Small_SC.jpg)
 
 2. LAYOUT STYLE INDENTATION: Bare access modifiers (those not applying to specific methods) should be indented as deep as method definitions, or as deep as the class/module keyword, depending on configuration.
 
@@ -42,7 +43,7 @@ $ cd bin
 
 /root-project-folder/bin
 
-Open **_linter_** file using the text editor of your preference.
+Open **_main_** file using the text editor of your preference.
 
 ### Built With
 
