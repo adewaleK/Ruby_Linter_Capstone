@@ -1,14 +1,21 @@
 class StyleError
   def missing_brackets_round_arguments(lines)
+    puts ''
     puts '***** AMBIGOUS METHODS *****'
     res_arr = []
     lines.each_with_index do |k, index|
-      res_arr << "Missing brackets '()' around argument on line #{index + 1}" if k.include?('def') and !k.include?(')')
+      if k.include?('def')
+        arr = k.split(' ')
+        if arr.length > 2 and !arr[-1].include?(')')
+          res_arr << "Missing brackets '()' around argument(s) on line #{index + 1}: all arguments must be enclosed within a bracket "
+        end
+      end
     end
     res_arr
   end
 
   def indentation(lines)
+    puts ''
     puts '***** INDENTATION ERRORS *****'
     error_array = []
     my_array = ['if', 'def', '{', 'class', 'module', 'unless']
