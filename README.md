@@ -30,6 +30,7 @@ This requires me to create Ruby linters to further make life easy for me and oth
       end
    
    *****Examples Of Normal Methods*****
+   ```
    i) def my_method 
         puts 'Hello World'
       end
@@ -39,7 +40,7 @@ This requires me to create Ruby linters to further make life easy for me and oth
    iii) def my_method(a, b, c)
         puts 'Hello World'
       end
-
+   ```
    ![screenshot](images/sample1a.jpg)
 
 2. LAYOUT STYLE INDENTATION: Bare access modifiers (those not applying to specific methods) should be indented as deep as method definitions, or as deep as the class/module keyword, depending on configuration.
