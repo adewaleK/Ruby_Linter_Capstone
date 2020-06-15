@@ -18,36 +18,19 @@ def bubble_sort(sorted_array)
   p sorted_array
 end
 
-def themethod
-  puts 'hello'
-end
-
-def propermethod (a, b, c)
-  puts 'hello'
-end
-
 def bubble_sort_by(sorted_array)
   check = true
   while check
-    check = false
+check = false
     (0...sorted_array.length - 1).each do |i|
       next unless yield(sorted_array[i], sorted_array[i + 1]).positive?
 
-      sorted_array[i], sorted_array[i + 1] = sorted_array[i + 1], sorted_array[i]
+          sorted_array[i], sorted_array[i + 1] = sorted_array[i + 1], sorted_array[i]
       check = true
     end
   end
   p sorted_array
 end
-
-def mymethod a
-  puts 'hello'
-end
-
-def newmethof a, b, c
-  puts 'hello'
-end
-
 
 bubble_sort_by(%w[excel hello hi hi baby y]) do |left, right|
   left.length - right.length
