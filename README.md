@@ -21,14 +21,17 @@
 This requires me to create Ruby linters to further make life easy for me and other programmers. I have created 2 Ruby linters to check
 
 1. AMBIGUITY IN METHOD: This cop checks for ambiguous block association with method when param passed without parentheses. All methods with one or more arguments must have the arguments enclosed within a bracket. Any method whose arguments are not enclosed within a bracket is ambigous and that's what our linter is up to detect.
+
    *****Examples Of Ambigous Methods*****
+   ```
    i) def my_method a
         puts 'Hello World'
       end
    ii) def my_method a, b, c
         puts 'Hello World'
       end
-   
+   ```
+
    *****Examples Of Normal Methods*****
    ```
    i) def my_method 
