@@ -6,9 +6,7 @@ class StyleError
     lines.each_with_index do |k, index|
       if k.include?('def')
         arr = k.split(' ')
-        if arr.length > 2 and !arr[-1].include?(')')
-          res_arr << "Missing brackets '()' around argument(s) on line #{index + 1}: all arguments must be enclosed within a bracket "
-        end
+        res_arr << "Missing brackets '()' around argument(s) on line #{index + 1}: all arguments must be enclosed within a bracket " if arr.length > 2 and !arr[-1].include?(')')
       end
     end
     res_arr
