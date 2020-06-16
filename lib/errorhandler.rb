@@ -31,9 +31,7 @@ class StyleError
       end
     end
     space_hash.each do |x, y|
-      if lines[x - 1].match(/^\s{#{y + 1}}[\w]*/)
-        error_array.push("StyleError:Indentation at Line no. #{x}  Indentations required: #{y}")
-      end
+      error_array.push("StyleError:Indentation at Line no. #{x}  Indentations required: #{y}") if lines[x - 1].match(/^\s{#{y + 1}}[\w]*/)
     end
     error_array
   end
