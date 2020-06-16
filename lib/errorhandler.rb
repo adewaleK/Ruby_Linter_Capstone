@@ -4,10 +4,10 @@ class StyleError
     puts '***** AMBIGOUS METHODS *****'
     res_arr = []
     lines.each_with_index do |k, index|
-      if k.include?('def')
-        arr = k.split(' ')
+      arr = k.split(' ')
+      if k.include?('def') and arr.length > 2 and !arr[-1].include?(')')
         msg = "Missing brackets '()' around argument(s) on line #{index + 1}: all arguments must be enclosed within a bracket "
-        res_arr << msg if arr.length > 2 and !arr[-1].include?(')')
+        res_arr << msg 
       end
     end
     res_arr
