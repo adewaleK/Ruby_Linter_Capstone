@@ -7,7 +7,7 @@ class StyleError
       arr = k.split(' ')
       if k.include?('def') and arr.length > 2 and !arr[-1].include?(')')
         msg = "Missing brackets '()' around argument(s) on line #{index + 1}: all arguments must be enclosed within a bracket "
-        res_arr << msg 
+        res_arr << msg
       end
     end
     res_arr
