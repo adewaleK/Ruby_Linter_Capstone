@@ -32,5 +32,5 @@ brackets_validate = validate.missing_brackets_round_arguments(lines)
 brackets_validate.each { |x| puts x } unless brackets_validate.empty?
 indentation_validate = validate.indentation(lines)
 indentation_validate.each { |x| puts x } unless indentation_validate.empty?
-puts 'No Errors Found.' if brackets_validate.empty? && trailing_validate.empty?
+puts 'No Errors Found.' if brackets_validate.empty? && indentation_validate.empty?
 file.close
