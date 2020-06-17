@@ -104,10 +104,11 @@ Please provide the path to the file you would like to check for errors
 $ <path to file>
 
 ```
+## How To Get Path To Test File
 
-You can get the **_path to file_** by going to your file directory and copying the path, or on your code editor right click on the file and then **_Copy Path_**. Then follow the instructions provided by the linter.
+First make sure that you place the file inside the 'lib' directory of the project. You can then get the **_path to file_** by going to your file directory and copying the path, or on your code editor right click on the file and then **_Copy Path_**. Then follow the instructions provided by the linter.
 
-> **_Please [click here](https://vimeo.com/429463831) to view the video instructions._**
+> **_Please [click here](https://vimeo.com/429463831) to view the video instructions for better understanding._**
 
 ### Built With
 
