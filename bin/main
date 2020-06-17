@@ -1,2 +1,36 @@
 #!/usr/bin/env ruby
-puts "hello world"
+
+require_relative '../lib/filevalidator.rb'
+require_relative '../lib/errorhandler.rb'
+file_validation = false
+while file_validation == false
+  puts ''
+  print 'Please Enter the path to the file you would like to check for errors: '
+  file = gets.chomp
+  if file.empty?
+    puts 'Empty path! Please Provide the path of the file. '
+  else
+    file_validate = FileValidation.new
+    validation = file_validate.file_exist(file)
+    if !validation == true
+      puts 'File not found Or Wrong format of file. PLease select .rb file'
+      puts "Your file address is : #{file}"
+    else
+      puts 'File Loaded'
+      file_validation = true
+    end
+  end
+end
+
+lines = []
+file = File.open(file, 'r')
+while (line = file.gets)
+  lines << line
+end
+validate = StyleError.new
+brackets_validate = validate.missing_brackets_round_arguments(lines)
+brackets_validate.each { |x| puts x } unless brackets_validate.empty?
+indentation_validate = validate.indentation(lines)
+indentation_validate.each { |x| puts x } unless indentation_validate.empty?
+puts 'No Errors Found.' if brackets_validate.empty? && indentation_validate.empty?
+file.close
